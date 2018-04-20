@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="assets_backend" name="pos_cutom_itgis_assets" inherit_id="point_of_sale.assets">
+            <xpath expr="//link[last()]" position="after">
+                <script type="text/javascript" src="/pos_cutom_itgis/static/src/js/pos.js"></script>
+                <link rel="stylesheet" href="/pos_cutom_itgis/static/src/css/pos.css"/>
+            </xpath>
+        </template>
+    </data>
+</odoo>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <!--<t t-extend="Chrome">-->
+         <!--<t t-jquery='div[class="pos-branding"]' t-operation="replace">-->
+             <!--<div class="pos-branding">-->
+                 <!--<span class="placeholder-OrderHeaderWidget"></span>-->
+             <!--</div>-->
+         <!--</t>-->
+    <!--</t>-->
+
+    <t t-extend="OrderWidget">
+        <t t-jquery='div[class="order-scroller touch-scrollable"]' t-operation="before">
+            <div class="order-total" style="text-align: center; height: 50px; color: green; font-weight: bold; background-color: black; font-size: 30pt;">
+                <span class="label">0</span>
+            </div>
+        </t>
+    </t>
+
+    <t t-extend="ProductScreenWidget">
+        <!--<t t-jquery='div[class="leftpane"]' t-operation="before">-->
+            <!--<div class="controlpane">-->
+                <!--<div class="control-buttons oe_hidden"></div>-->
+            <!--</div>-->
+        <!--</t>-->
+
+        <!--<t t-jquery='div[class="subwindow-container-fix pads"]' t-operation="replace">-->
+            <!--<div class="control-buttons oe_hidden"></div>-->
+            <!--<div class="order-bot-buttons">-->
+                <!--<div class="order-action-print">In bếp</div>-->
+                <!--<div class="order-action-payment">Thanh toán</div>-->
+            <!--</div>-->
+            <!--&lt;!&ndash;<div class="placeholder-ActionpadWidget"></div>&ndash;&gt;-->
+            <!--&lt;!&ndash;<div class="placeholder-NumpadWidget"></div> #f39c12&ndash;&gt;-->
+        <!--</t>-->
+
+        <t t-jquery='tr[class="content-row"]' t-operation="after">
+             <tr class="session-target-row" style="background-color:#f39c12;font-weight: bold;font-size: 12pt;height: 35px;line-height: 30px;text-align: left;">
+                 <td class="session-target">
+                    <div class="target-item" style="width: 49%;float: left;">
+                        <span style="padding-left: 13px;">Doanh thu chỉ tiêu của CH: <span style="color: #fff;">10.000.000đ</span></span>
+                    </div>
+                    <div class="target-item" style="width: 49%;float: left;">
+                        <span>Doanh thu thực tế của CH: <span style="color: #fff;">8.900.000đ</span></span>
+                    </div>
+                    <div class="target-item" style="width: 49%;float: left;">
+                        <span style="padding-left: 13px;">Doanh thu chỉ tiêu ca: <span style="color: #fff;">5.000.000đ</span></span>
+                    </div>
+                    <div class="target-item" style="width: 49%;float: left;">
+                        <span>Doanh thu thực tế ca: <span style="color: #fff;">3.600.000đ</span></span>
+                    </div>
+                 </td>
+            </tr>
+        </t>
+    </t>
+
+    <t t-extend="Orderline">
+        <t t-jquery='span[class="product-name"]' t-operation="before">
+            <span class="line-remove-order">
+                <i class="fa fa-trash-o"/>
+            </span>
+        </t>
+        <t t-jquery='span[class="product-name"]' t-operation="after">
+            <span class="line-qty">
+                <t t-esc="line.get_quantity_str()"/>
+            </span>
+            <span class="line-discount">
+                <t t-esc="line.get_discount_str()" /> %
+            </span>
+        </t>
+        <t t-jquery='ul[class="info-list"]' t-operation="before">
+            <div style="clear:both;"/>
+        </t>
+        <!--<t t-jquery='ul[class="info-list"]' t-operation="replace">-->
+            <!--&lt;!&ndash;<t t-if="line.get_note()">&ndash;&gt;-->
+                <!--&lt;!&ndash;<li class="info orderline-note">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<i class='fa fa-tag'/><t t-esc="line.get_note()" />&ndash;&gt;-->
+                <!--&lt;!&ndash;</li>&ndash;&gt;-->
+            <!--&lt;!&ndash;</t>&ndash;&gt;-->
+        <!--</t>-->
+    </t>
+
+    <t t-name="OrderHeaderWidget">
+        <div class="control-button">
+            <div class="order-select-table">
+                <span>Bàn số:</span>
+                <span class="table-number">0</span>
+            </div>
+            <div class="order-select-customer">
+                <t t-if="widget.pos.get_client()">
+                    <t t-esc="widget.pos.get_client().name" />
+                </t>
+                <t t-if="!widget.pos.get_client()">
+                    Khách lẻ
+                </t>
+            </div>
+        </div>
+        <div style="clear:both;"/>
+    </t>
+</templates>

@@ -1,0 +1,215 @@
+/*.pos .controlpane {
+    left: 0px;
+    width: 69px;
+    box-sizing: border-box;
+    position: absolute;
+    background: #e2e2e2;
+    top: 0px;
+    bottom: 0;
+    border-right: solid 1px #CECBCB;
+    border-right: solid 3px #787878;
+}
+
+.pos .leftpane {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    position: absolute;
+    left: 69px;
+    width: 440px;
+    top: 0px;
+    bottom: 0;
+    border-right: solid 1px #CECBCB;
+    border-right: solid 3px #787878;
+    background: #e2e2e2;
+}
+
+.pos .rightpane {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 509px;
+    right: 0;
+    vertical-align: top;
+    -webkit-transform: translate3d(0,0,0);
+}
+
+
+.pos .pos-branding {
+    position: absolute;
+    display: table-cell;
+    left: 0;
+    top: 0;
+    width: 440px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border-right: 1px solid #373737;
+    text-align: left;
+    line-height: 100%;
+    vertical-align: middle;
+}
+
+.pos .pos-rightheader {
+    position: absolute;
+    left: 440px;
+    right: 0;
+    top: 0;
+    height: 100%;
+    display: -webkit-flex;
+    display: flex;
+}
+
+
+.pos .control-buttons {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    padding: 8px 5px 0px 5px;
+    margin-bottom: -6px;
+}
+
+.pos .control-button {
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+    background: #e2e2e2;
+    border: solid 1px #bfbfbf;
+    display: inline-block;
+    line-height: 30px;
+    min-width: 30px;
+    text-align: center;
+    border-radius: 3px;
+    padding: 0px;
+    font-size: 18px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all linear 150ms;
+}
+*/
+
+.pos .order-scroller {
+    width: 100%;
+    height: 90%;
+    overflow: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.pos .order .orderline{
+    width:100%;
+    margin:0px;
+    padding-top:3px;
+    padding-bottom:10px;
+    padding-left:15px;
+    padding-right:15px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    min-height: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+            box-sizing: border-box;
+    -webkit-transition: background 250ms ease-in-out;
+       -moz-transition: background 250ms ease-in-out;
+            transition: background 250ms ease-in-out;
+}
+
+.pos .order .orderline .line-remove-order{
+    width:5%;
+    float:left;
+}
+
+.pos .order .orderline .product-name{
+    margin-left: 3px;
+    width:40%;
+    overflow:hidden;
+    float:left;
+    text-overflow: ellipsis;
+}
+
+.pos .order .orderline .line-qty{
+    margin-left: 5px;
+    float:left;
+    width:12%;
+    color: white;
+    text-align: center;
+    background: #7f82ac;
+    padding: 3px;
+}
+
+.pos .order .orderline .line-discount{
+    margin-left: 5px;
+    float:left;
+    width:12%;
+    color: white;
+    text-align: center;
+    background: #7f82ac;
+    padding: 3px;
+}
+
+.pos .order .orderline .price{
+    margin-left: 3px;
+    width: 23%;
+    text-align: right;
+    float:right;
+}
+
+.order-header-info .order-select-table {
+    float:left;
+    color: #DDD;
+    font-size: 18px;
+    line-height: 48px;
+    font-style: italic;
+    margin-left: 15px;
+}
+.order-header-info .order-select-table .table-number {
+    padding: 15px;
+    cursor: pointer;
+}
+
+.order-header-info .order-select-customer {
+    float: right;
+    color: #DDD;
+    font-size: 18px;
+    margin-right: 35px;
+    line-height: 48px;
+    font-style: italic;
+    cursor: pointer;
+}
+
+.order-bot-buttons {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+.order-bot-buttons .order-action-print {
+    width: 49%;
+    float:left;
+    height: 69px;
+    line-height:69px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 15pt;
+    cursor: pointer;
+    background-color: #f39c12 !important;
+    border: solid 1px #e08e0b !important;
+}
+
+.order-bot-buttons .order-action-payment {
+    width: 49%;
+    float: right;
+    height: 69px;
+    line-height:69px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 15pt;
+    cursor: pointer;
+    background-color: #00a65a !important;
+    border: solid 1px #008d4c !important;
+}
